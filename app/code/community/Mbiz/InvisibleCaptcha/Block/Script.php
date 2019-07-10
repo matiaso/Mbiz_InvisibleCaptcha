@@ -22,7 +22,7 @@ class Mbiz_InvisibleCaptcha_Block_Script extends Mage_Core_Block_Abstract
      */
     protected function _toHtml()
     {
-        if (Mage::helper('mbiz_invisiblecaptcha')->isActive()) {
+        if (Mage::helper('mbiz_invisibleCaptcha')->isActive()) {
             return PHP_EOL . '<script src="https://www.google.com/recaptcha/api.js?render=explicit" async defer></script>' . PHP_EOL;
         }
         return '';
