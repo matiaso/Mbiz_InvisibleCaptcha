@@ -42,10 +42,10 @@ class Mbiz_InvisibleCaptcha_Model_Observer extends Mage_Core_Model_Abstract
                 return;
         }
 
-        if (Mage::helper('mbiz_invisiblecaptcha')->isActive() && Mage::getStoreConfigFlag($configPath)) {
-            if (!Mage::helper('mbiz_invisiblecaptcha')->verify()) {
+        if (Mage::helper('mbiz_invisibleCaptcha')->isActive() && Mage::getStoreConfigFlag($configPath)) {
+            if (!Mage::helper('mbiz_invisibleCaptcha')->verify()) {
                 if ($doRedirect || !Mage::getStoreConfigFlag('admin/security/validate_formkey_checkout')) {
-                    Mage::getSingleton('customer/session')->addError(Mage::helper('mbiz_invisiblecaptcha')->__('Unable to submit your request.'));
+                    Mage::getSingleton('customer/session')->addError(Mage::helper('mbiz_invisibleCaptcha')->__('Unable to submit your request.'));
                     Mage::app()->getResponse()
                         ->setRedirect($urlToRedirect)
                         ->sendHeaders();
